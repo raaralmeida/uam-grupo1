@@ -1,0 +1,60 @@
+<h1>Metodologia</h1>
+
+<p>
+A metodologia deste estudo iniciou-se com uma investigação sobre possíveis
+abordagens para estimativa de demanda para <strong>Urban Air Mobility (UAM)</strong>.
+A literatura indica que variáveis como densidade populacional, atividade
+econômica, geração de viagens e concentração de polos urbanos são fatores
+determinantes para a demanda potencial desse tipo de serviço.
+</p>
+
+<p>
+Durante a revisão bibliográfica foi identificado que muitos desses fatores
+também estão diretamente relacionados à demanda por operações de
+<strong>drones ou Unmanned Aircraft Systems (UAS)</strong>. Dessa forma, partiu-se
+da hipótese de que existe uma correlação entre a distribuição espacial
+de operações de drones e o potencial de demanda para serviços de UAM.
+</p>
+
+<p>
+Com base nessa premissa, foi utilizada uma base de dados histórica de
+solicitações de voo de drones proveniente do sistema
+<strong>SARPAS</strong>, utilizado no Brasil para o registro e autorização de
+operações de aeronaves remotamente pilotadas. A base analisada contém
+mais de <strong>800 mil solicitações de voo registradas entre 2016 e 2022</strong>.
+Após esse período o sistema foi atualizado e os dados históricos deixaram
+de estar disponíveis publicamente.
+</p>
+
+<p>
+A base de dados utilizada contém, entre outros atributos, as coordenadas
+geográficas (<em>latitude e longitude</em>) das solicitações de voo. Esses dados
+foram processados utilizando o software de geoprocessamento
+<strong>QGIS</strong>, permitindo a realização de uma análise espacial sobre a
+camada geográfica de municípios brasileiros.
+</p>
+
+<p>
+A partir desse processamento foi possível avaliar a distribuição espacial
+das operações de drones no território nacional, identificando padrões
+de concentração que podem indicar regiões com maior potencial para
+desenvolvimento futuro de serviços de <strong>Urban Air Mobility</strong>.
+</p>
+
+<p>
+Os resultados preliminares dessa análise são apresentados no dashboard
+interativo a seguir:
+</p>
+
+<div style="margin-top:30px; margin-bottom:40px;">
+
+<iframe 
+title="UAM - Análise de solicitações de voo de drones"
+width="100%" 
+height="500"
+src="https://app.powerbi.com/view?r=eyJrIjoiMGIyYTc0YTMtNmU4OC00NmNmLWFkYzgtNjllNDdhM2Y0ZjY2IiwidCI6IjI2MjI4ZGNhLTcwZDMtNDkxNy04MjMzLTA4M2FjMzY1NWE5MSJ9"
+frameborder="0"
+allowFullScreen="true">
+</iframe>
+
+</div>
