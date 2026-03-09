@@ -42,11 +42,14 @@ nav {
     margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 nav a {
     text-decoration: none;
-    margin-right: 20px;
     color: #003366;
     font-weight: 600;
 }
@@ -75,6 +78,7 @@ li {
 
 img {
     max-width: 100%;
+    height: auto;
     margin: 20px 0;
 }
 
@@ -131,4 +135,37 @@ font-size: 18px;
 .member p{
 font-size: 14px;
 color: #555;
+}
+
+/* ===== RESPONSIVIDADE PARA CELULAR ===== */
+
+@media (max-width: 768px) {
+
+body {
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+nav {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team {
+    flex-direction: column;
+    align-items: center;
+}
+
+.member {
+    width: 80%;
+}
+
 }
