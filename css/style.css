@@ -39,8 +39,19 @@ p {
     margin: 15px 0;
 }
 
+/* ===== Navegação fixa no topo ===== */
 
-/* ===== Navegação (menu superior) ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    z-index: 1000;
+}
+
+/* ===== Navegação (menu superior) ===== 
 
 nav {
     margin-bottom: 30px;
@@ -60,7 +71,7 @@ nav a {
 
 nav a:hover {
     color: #0077cc;
-}
+}*/
 
 
 /* ===== Listas ===== */
