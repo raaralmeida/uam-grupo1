@@ -13,13 +13,23 @@
 <div class="container">
 
 <nav>
+
+<button class="menu-toggle" onclick="toggleMenu()">
+☰
+</button>
+
+<div class="nav-links" id="navLinks">
+
 <a href="index.html">Home</a>
 <a href="research.html">Contexto</a>
 <a href="methodology.html">Metodologia</a>
 <a href="results.html">Análises</a>
 <a href="references.html">Referências</a>
-</nav>
 
+</div>
+
+</nav>
+  
 <h1>Metodologia</h1>
 
 <p>
@@ -319,6 +329,16 @@ segurança operacional e amadurecimento regulatório.
 </p>
   
 </div>
+
+<script>
+
+function toggleMenu(){
+const menu = document.getElementById("navLinks");
+menu.classList.toggle("active");
+}
+
+</script>
+
 </body>
 
 </html>
