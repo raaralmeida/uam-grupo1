@@ -62,28 +62,6 @@ nav a:hover {
     color: #0077cc;
 }
 
-/* ===== Navegação (menu superior) ===== 
-
-nav {
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #003366;
-    font-weight: 600;
-}
-
-nav a:hover {
-    color: #0077cc;
-}*/
-
 
 /* ===== Listas ===== */
 
