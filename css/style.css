@@ -51,6 +51,17 @@ nav {
     z-index: 1000;
 }
 
+nav a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #003366;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #0077cc;
+}
+
 /* ===== Navegação (menu superior) ===== 
 
 nav {
