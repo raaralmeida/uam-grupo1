@@ -712,24 +712,7 @@ function calcular() {
     atualizarGrafico(resultados);
 }
 
-function atualizarGrafico(resultados) {
 
-    let labels = resultados.map(r => r.alt);
-    let valores = resultados.map(r => r.score);
-
-    if (chart) chart.destroy();
-
-    chart = new Chart(document.getElementById("grafico"), {
-        type: "bar",
-        data: {
-            labels: labels,
-            datasets: [{
-                label: "Score",
-                data: valores
-            }]
-        }
-    });
-}
 
 document.querySelectorAll("input").forEach(e => {
     e.addEventListener("input", calcular);
