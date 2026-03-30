@@ -67,6 +67,8 @@ input[type=range] {
 }
 
 
+
+
 /* ===== Parágrafos ===== */
 
 p {
@@ -94,6 +96,13 @@ nav a {
 
 nav a:hover {
     color: #0077cc;
+}
+
+nav a.active{
+color:#0077cc;
+border-bottom:2px solid #0077cc;
+padding-bottom:3px;
+font-weight:700;
 }
 
 
