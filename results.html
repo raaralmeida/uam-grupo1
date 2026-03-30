@@ -610,6 +610,122 @@ e D (tempo), evidenciando o impacto estratégico da definição de pesos.
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+<h1>AHP Interativo - Análise de Sensibilidade</h1>
+
+<div class="card">
+<h2>Ajuste de Pesos</h2>
+
+<div class="slider-container">
+<label>Conectividade: <span id="wc">0.28</span></label>
+<input type="range" min="0" max="1" step="0.01" value="0.28" id="wC">
+</div>
+
+<div class="slider-container">
+<label>Tempo: <span id="wt">0.64</span></label>
+<input type="range" min="0" max="1" step="0.01" value="0.64" id="wT">
+</div>
+
+<div class="slider-container">
+<label>Restrições: <span id="wr">0.08</span></label>
+<input type="range" min="0" max="1" step="0.01" value="0.08" id="wR">
+</div>
+
+<p><strong>Soma dos pesos:</strong> <span id="sum">1.00</span></p>
+</div>
+
+<div class="card">
+<h2>Resultados</h2>
+
+<table id="tabela">
+<tr>
+<th>Alternativa</th>
+<th>Score</th>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<h2>Gráfico de Ranking</h2>
+<canvas id="grafico"></canvas>
+</div>
+
+<script>
+
+// dados normalizados
+const data = {
+    A: {c:1.000, t:0.469, r:0.333},
+    B: {c:0.500, t:0.517, r:0.333},
+    C: {c:0.750, t:1.000, r:1.000},
+    D: {c:0.625, t:0.853, r:0.500}
+};
+
+let chart;
+
+function calcular() {
+
+    let wC = parseFloat(document.getElementById("wC").value);
+    let wT = parseFloat(document.getElementById("wT").value);
+    let wR = parseFloat(document.getElementById("wR").value);
+
+    let soma = wC + wT + wR;
+
+    document.getElementById("wc").innerText = wC.toFixed(2);
+    document.getElementById("wt").innerText = wT.toFixed(2);
+    document.getElementById("wr").innerText = wR.toFixed(2);
+    document.getElementById("sum").innerText = soma.toFixed(2);
+
+    let resultados = [];
+
+    for (let alt in data) {
+        let score = data[alt].c * wC + data[alt].t * wT + data[alt].r * wR;
+        resultados.push({alt, score});
+    }
+
+    resultados.sort((a,b) => b.score - a.score);
+
+    let tabela = document.getElementById("tabela");
+    tabela.innerHTML = "<tr><th>Alternativa</th><th>Score</th></tr>";
+
+    resultados.forEach((r, i) => {
+        let classe = i < 2 ? "highlight" : "";
+        tabela.innerHTML += `<tr class="${classe}"><td>${r.alt}</td><td>${r.score.toFixed(3)}</td></tr>`;
+    });
+
+    atualizarGrafico(resultados);
+}
+
+function atualizarGrafico(resultados) {
+
+    let labels = resultados.map(r => r.alt);
+    let valores = resultados.map(r => r.score);
+
+    if (chart) chart.destroy();
+
+    chart = new Chart(document.getElementById("grafico"), {
+        type: "bar",
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Score",
+                data: valores
+            }]
+        }
+    });
+}
+
+document.querySelectorAll("input").forEach(e => {
+    e.addEventListener("input", calcular);
+});
+
+calcular();
+
+</script>
+
+
   
   
 <h2>Carregando...</h2>
