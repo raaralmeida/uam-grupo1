@@ -431,13 +431,24 @@ Com o Plano Piloto como destino, o ganho de tempo do vertiporto diminui, pois o 
 
 <table>
 <tr><th>Critério</th><th>Votos</th></tr>
-<tr class="winner"><td>CConectividade</td><td>6</td></tr>
-<tr class="winner"><td>Tempo de Deslocamento</td><td>6</td></tr>
+<tr class="winner"><td>Conectividade</td><td>5</td></tr>
+<tr class="winner"><td>Tempo de Deslocamento</td><td>5</td></tr>
 <tr class="winner"><td>Restrições</td><td>3</td></tr>
 <tr><td>População</td><td>2</td></tr>
 <tr><td>Ruído</td><td>0</td></tr>
 <tr><td>Distância</td><td>0</td></tr>
 </table>
+
+<p>A fim de medir cada critério por alternativa, optou-se por utilizar <strong>métodos objetivos</strong> para quantificar tais atributos, desta forma o modelo fica mais <strong>consistente e robusto</strong>.</p>
+
+<table>
+<tr><th>Critério</th><th>Definição</th><th>Método de cálculo</th><th>Interpretação</th></tr>
+<tr><td>Conectividade</td><td>Grau de integração dos modais e interligação a diversas localidades, de modo fácil e acessível.</td><td>Quantidade de modais a 10 min de distância caminhando. Para fins de distinção entre modais é considerado os seguintes pesos: Aéreo = 1, Metroviário = 2 e Rodoviário = 3.*</td><td>Quanto maior melhor.</td></tr>
+<tr><td>Tempo de Deslocamento</td>Tempo de referência de deslocamento por modais "padrão" até o vertiporto natural - Aeroporto Internacional de Brasília.<td>Tempo médio entre o sítio e o aeroporto na hora pico, considerando carro e transporte público. (em minutos)</td><td>Quanto maior melhor.</td></tr>
+<tr><td>Restrições</td><td>Limitações para operação devido à restrições legais, operacionais e/ou ambientais.</td><td>Quantidade de restrições em relação ao Espaço Aéreo, à municipalidade e ao meio ambiente. Cada restrição equivale a 1 ponto.</td><td>Quanto menor melhor.</td></tr>
+</table>
+
+<p>*pesos arbitrados levando em consideração análises como capacidade, flexibilida, custo, capilaridade, tempo e escala.</p>
 
 <div class="card">
 <h2>1. Dados de Entrada</h2>
