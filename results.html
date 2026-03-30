@@ -457,6 +457,160 @@ Essa conclusão deve ser entendida como uma etapa qualitativa e preliminar. O re
 
 <p>
 </p>
+
+
+<title>AHP - Seleção de Vertiporto</title>
+
+<h1>AHP para Seleção de Local de Vertiporto</h1>
+
+<div class="card">
+<h2>1. Dados de Entrada</h2>
+<table>
+<tr>
+<th>Alternativa</th><th>Conectividade</th><th>Tempo</th><th>Restrições</th>
+</tr>
+<tr><td>A</td><td>8</td><td>33.5</td><td>2</td></tr>
+<tr><td>B</td><td>4</td><td>37</td><td>2</td></tr>
+<tr><td>C</td><td>6</td><td>71.5</td><td>0</td></tr>
+<tr><td>D</td><td>5</td><td>61</td><td>1</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>2. Normalização</h2>
+
+<h3>Fórmulas</h3>
+<p>Conectividade = valor / máximo</p>
+<p>Tempo = valor / máximo</p>
+<p>Restrições = 1 / (1 + restrições)</p>
+
+<table>
+<tr>
+<th>Alt</th><th>Conectividade</th><th>Tempo</th><th>Restrições</th>
+</tr>
+<tr><td>A</td><td>1.000</td><td>0.469</td><td>0.333</td></tr>
+<tr><td>B</td><td>0.500</td><td>0.517</td><td>0.333</td></tr>
+<tr><td>C</td><td>0.750</td><td>1.000</td><td>1.000</td></tr>
+<tr><td>D</td><td>0.625</td><td>0.853</td><td>0.500</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>3. Matriz AHP</h2>
+
+<table>
+<tr>
+<th></th><th>C</th><th>T</th><th>R</th>
+</tr>
+<tr><td>C</td><td>1</td><td>0.333</td><td>5</td></tr>
+<tr><td>T</td><td>3</td><td>1</td><td>7</td></tr>
+<tr><td>R</td><td>0.2</td><td>0.143</td><td>1</td></tr>
+</table>
+
+<h3>Pesos Calculados</h3>
+<table>
+<tr><th>Critério</th><th>Peso</th></tr>
+<tr><td>Conectividade</td><td>0.283</td></tr>
+<tr><td>Tempo</td><td>0.643</td></tr>
+<tr><td>Restrições</td><td>0.074</td></tr>
+</table>
+
+<p><strong>Consistência:</strong> CR = 0.056 (Aceitável)</p>
+</div>
+
+<div class="card">
+<h2>4. Cálculo do Score</h2>
+
+<p>Score = (C × 0.283) + (T × 0.643) + (R × 0.074)</p>
+
+<table>
+<tr>
+<th>Alt</th><th>Cálculo</th><th>Score</th>
+</tr>
+<tr>
+<td>A</td>
+<td>(1×0.283)+(0.469×0.643)+(0.333×0.074)</td>
+<td>0.609</td>
+</tr>
+<tr>
+<td>B</td>
+<td>(0.5×0.283)+(0.517×0.643)+(0.333×0.074)</td>
+<td>0.498</td>
+</tr>
+<tr class="winner">
+<td>C</td>
+<td>(0.75×0.283)+(1×0.643)+(1×0.074)</td>
+<td>0.929</td>
+</tr>
+<tr>
+<td>D</td>
+<td>(0.625×0.283)+(0.853×0.643)+(0.5×0.074)</td>
+<td>0.762</td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<h2>5. Ranking Final</h2>
+<table>
+<tr><th>Posição</th><th>Alternativa</th><th>Score</th></tr>
+<tr class="winner"><td>1º</td><td>C - Sobradinho</td><td>0.929</td></tr>
+<tr><td>2º</td><td>D - Ceilândia</td><td>0.762</td></tr>
+<tr><td>3º</td><td>A - Rodoviária</td><td>0.609</td></tr>
+<tr><td>4º</td><td>B - Complexo 21</td><td>0.498</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>6. Análise de Sensibilidade</h2>
+
+<h3>Sensibilidade Marginal</h3>
+
+<table>
+<tr>
+<th>Alt</th><th>dScore/dC</th><th>dScore/dT</th><th>dScore/dR</th>
+</tr>
+<tr><td>A</td><td>1.000</td><td>0.469</td><td>0.333</td></tr>
+<tr><td>B</td><td>0.500</td><td>0.517</td><td>0.333</td></tr>
+<tr class="highlight"><td>C</td><td>0.750</td><td>1.000</td><td>1.000</td></tr>
+<tr><td>D</td><td>0.625</td><td>0.853</td><td>0.500</td></tr>
+</table>
+
+<h3>Impacto de +1% no Peso do Tempo</h3>
+
+<table>
+<tr>
+<th>Alt</th><th>ΔScore</th>
+</tr>
+<tr><td>A</td><td>+0.0047</td></tr>
+<tr><td>B</td><td>+0.0052</td></tr>
+<tr class="highlight"><td>C</td><td>+0.0100</td></tr>
+<tr><td>D</td><td>+0.0085</td></tr>
+</table>
+
+<p><strong>Interpretação:</strong> A alternativa C é a mais sensível ao critério tempo, o que explica sua robustez no ranking.</p>
+
+</div>
+
+<div class="card">
+<h2>7. Conclusão</h2>
+
+<p>
+A alternativa C (Sobradinho) apresenta desempenho superior em todos os cenários analisados,
+com alta robustez devido à dominância nos critérios de tempo e restrições.
+</p>
+
+<p>
+O trade-off principal do modelo ocorre entre as alternativas A (conectividade)
+e D (tempo), evidenciando o impacto estratégico da definição de pesos.
+</p>
+
+</div>
+
+
+
+
+  
   
 <h2>Carregando...</h2>
 
